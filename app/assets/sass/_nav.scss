@@ -1,4 +1,4 @@
-$nav-top: 5%; // removing 20px which we add by margin top in menu-text
+$nav-top: 5%; 
 .main-nav {
     position: absolute;
     width: 13%;
@@ -7,8 +7,8 @@ $nav-top: 5%; // removing 20px which we add by margin top in menu-text
     .nav-item {
         position: relative;
         $menu-text-font-size: 20px !global;
-        $menu-text-margin-top: 5% !global; // add some wiggle room for the mouse click
-        $menu-text-margin-bottom: 5% !global; // add some wiggle room for the mouse click
+        $menu-text-margin-top: 5% !global;
+        $menu-text-margin-bottom: 5% !global;
         .menu-text {
             background: #fff;
             width: 115%;
