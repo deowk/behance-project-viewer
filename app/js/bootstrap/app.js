@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { pushState } from 'redux-router';
 import { connect } from 'react-redux';
+import Header from '../components/header.js';
 import '../../assets/sass/main.scss';
 
 function select(state) {
@@ -20,6 +21,7 @@ export class App extends React.Component {
 
         return (
             <div className="app-container">
+                <Header routerState={this.props.routerState} />
                 {React.cloneElement(children || <div />, {})}
             </div>
         );
