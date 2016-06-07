@@ -1,0 +1,14 @@
+import config from '../../../etc/app.config';
+
+// IMPORTANT! This file get's processed when the application starts. EVERYTHING that goes in here HAS to be static/immutable/constant.
+// You cannot add anything in here that changes. E.g.: You can't access the localStore (cookies) here, since they may change
+// as the program executes. For example - accessToken doesn't exist when application first starts - as you haven't logged in yet.
+
+var Manifest = {
+    host: config.api.hosts.base,
+    resources: {
+        // add youre resources here
+    }
+};
+
+export default Manifest;
