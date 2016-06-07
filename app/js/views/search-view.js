@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
+import { pushState } from 'redux-router';
 import keybinder from '../utils/keybinder';
 
-export default class SearchView extends Component {
+function select(state) {
+  return {
+    dispatch: state.dispatch
+  };
+}
+
+class SearchView extends Component {
   render() {
     return(
       <div className='container search-view'>
@@ -20,5 +27,15 @@ export default class SearchView extends Component {
 
   componentDidMount() {
     ReactDOM.findDOMNode(this.refs['searchInput']).focus();
+    keybinder.setContextWithBindings('search-view', [
+        {keyCombo: 'enter', fn: () => this.enter()}
+    ]);
+    keybinder.setContext('search-view');
+  }
+
+  enter() {
+    this.props.dispatch(pushState(null, '/main/projects', {section: 'main'}));
   }
 }
+
+export default connect(select)(SearchView);
