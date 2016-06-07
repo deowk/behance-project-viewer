@@ -21,14 +21,14 @@ export class App extends React.Component {
 
         return (
             <div className="app-container">
-                <Header routerState={this.props.routerState} />
-                {React.cloneElement(children || <div />, {})}
+              <div className="aspect-ratio-container">
+                <div className="aspect-ratio-filler">
+                  <Header routerState={this.props.routerState} />
+                  {React.cloneElement(children || <div />, {})}
+                </div>
+              </div>
             </div>
         );
-    }
-
-    componentDidMount() {
-        this.props.pushState(null, '/welcome', {});
     }
 }
 

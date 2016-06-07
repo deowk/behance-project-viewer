@@ -1,0 +1,17 @@
+header {
+  position: absolute;
+  height: $header-height;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+}
+
+.logo-container {
+  height: 100%;
+  width: 2%;
+  .header-logo {
+    width: 100%;
+    margin-top: 40%;
+    margin-left: 40%;
+  }
+}

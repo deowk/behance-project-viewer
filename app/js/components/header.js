@@ -4,7 +4,9 @@ export default class Header extends Component {
   render() {
     return(
         <header>
-          <img className='header-logo' src={require('../../assets/img/behance-logo.png')} />
+          <div className='logo-container'>
+            <img className='header-logo' src={require('../../assets/img/behance-logo.png')} />
+          </div>
         </header>
     )
   }

@@ -5,3 +5,7 @@
         clear: both;
     }
 }
+
+@function aspect-ratio($width, $height) {
+    @return 1 / (($width / $height) / 100) * 1%;
+}
