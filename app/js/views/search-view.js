@@ -37,7 +37,7 @@ class SearchView extends Component {
   }
 
   enter() {
-    this.props.dispatch(pushState(null, '/main/projects', {section: 'main'}));
+    this.props.dispatch(pushState(null, '/main/projects'));
   }
 
   _getNavItems() {

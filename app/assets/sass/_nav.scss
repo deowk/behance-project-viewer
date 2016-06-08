@@ -1,6 +1,8 @@
 .main-nav {
     position: absolute;
     width: 13%;
+    transition: all 0.2s ease-in-out;
+    transform: translateX(7%);
     z-index: 10;
     .nav-item {
         position: relative;
@@ -26,5 +28,8 @@
               width: 125%;
             }
         }
+    }
+    &.hidden {
+      transform: translateX(-130%);
     }
 }
