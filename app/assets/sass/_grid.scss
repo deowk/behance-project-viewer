@@ -1,0 +1,114 @@
+.tile-img {
+    transform: translateZ(0) scale(1);
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
+    backface-visibility: hidden;
+    perspective: 1000;
+}
+
+.placeholder {
+    transform: translate3d(0,0,0);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.thumb {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.grid-container {
+  position: absolute;
+  display: inline-block;
+  width: 300%;
+  transform: translateZ(0) translateX(8%);
+  .grid-column {
+      width: 8%;
+      vertical-align: top;
+      margin-right: 1%;
+      float: left;
+      .small-tile {
+        background: #000;
+        backface-visibility: hidden;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        .small-tile-text-container {
+            position: absolute;
+            transform: translate3d(0,0,0);
+            z-index: 100;
+        }
+      }
+  }
+}
+
+$small-tile-width: 435px;
+$small-tile-height: 244px;
+.small-tile {
+    width: 100%;
+    margin-bottom: 10%;
+
+    .small-tile-inner {
+      padding-bottom: aspect-ratio(202, 158);
+      position: relative;
+      .small-tile-filler {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        $small-tile-text-max-width: 298px !global;
+        $small-tile-text-font-size: 26px !global;
+        $small-tile-text-line-height: 28px !global;
+        $small-tile-text-padding-bottom: 24px !global;
+        $small-tile-text-padding-left: 24px !global;
+        .small-tile-text-container {
+            width: 100%;
+            padding-bottom: $small-tile-text-padding-bottom;
+            padding-left: $small-tile-text-padding-left;
+            bottom: 0;
+            color: #fff;
+        }
+
+        .small-tile-text {
+            text-align: left;
+            position: relative;
+            opacity: 0.8;
+            max-width: $small-tile-text-max-width;
+            font-size: $small-tile-text-font-size;
+            min-height: $small-tile-text-line-height;
+        }
+    }
+  }
+}
+
+.active {
+    .small-tile-text {
+        opacity: 1;
+    }
+}
+
+.small-tile.active {
+    &:after {
+        content: "";
+        transform: translate3d(0,0,0);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        position: absolute;
+        border: 2px solid $blue;
+    }
+    .tile-img {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}

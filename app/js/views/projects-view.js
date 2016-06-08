@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import Grid from '../components/grid';
 
 export default class ProjectsView extends Component {
   render() {
     return(
-      <div>
-        <h1>Main Content View</h1>
+      <div className='projects-container'>
+        <Grid />
       </div>
     )
   }

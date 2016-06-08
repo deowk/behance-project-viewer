@@ -38,6 +38,7 @@ body {
 
 .content {
   height: $content-height;
+  overflow: hidden;
   position: relative;
   // background: #000;
   top: $header-height;
