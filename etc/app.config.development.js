@@ -1,8 +1,9 @@
 export default {
     api: {
         hosts: {
-            base: ''
-        }
+            base: 'https://api.behance.net'
+        },
+        client_id: 'caBeD73lqTM40XK2e5nUAF6dr2ewojzG'
     },
     logging: {
         level: 'debug',
