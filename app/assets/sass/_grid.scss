@@ -65,11 +65,14 @@ $small-tile-height: 244px;
         right: 0;
 
         $small-tile-text-max-width: 298px !global;
-        $small-tile-text-font-size: 26px !global;
+        $small-tile-text-font-size: 22px !global;
         $small-tile-text-line-height: 28px !global;
         $small-tile-text-padding-bottom: 24px !global;
         $small-tile-text-padding-left: 24px !global;
         .small-tile-text-container {
+            position: absolute;
+            transform: translate3d(0,0,0);
+            z-index: 100;
             width: 100%;
             padding-bottom: $small-tile-text-padding-bottom;
             padding-left: $small-tile-text-padding-left;
@@ -80,7 +83,6 @@ $small-tile-height: 244px;
         .small-tile-text {
             text-align: left;
             position: relative;
-            opacity: 0.8;
             max-width: $small-tile-text-max-width;
             font-size: $small-tile-text-font-size;
             min-height: $small-tile-text-line-height;
@@ -105,10 +107,22 @@ $small-tile-height: 244px;
         left: 0;
         z-index: 1000;
         position: absolute;
-        border: 2px solid $blue;
+        border: 2px solid #fff;
     }
     .tile-img {
         opacity: 1;
         transform: scale(1.1);
     }
+}
+
+.protective-tile {
+    position: absolute;
+    transform: translate3d(0,0,0);
+    bottom: 0px;
+    z-index: 50;
+    height: 101%;
+    width: 101%;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 1%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 70%);
 }
