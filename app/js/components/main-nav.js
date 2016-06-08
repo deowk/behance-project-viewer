@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import keybinder from '../utils/keybinder';
 
 export default class MainNav extends Component {
   render() {
@@ -9,6 +10,34 @@ export default class MainNav extends Component {
         </ul>
       </div>
     )
+  }
+
+  componentDidMount() {
+    keybinder.setContextWithBindings('main-nav', [
+        {keyCombo: 'up', fn: () => this.up()},
+        {keyCombo: 'down', fn: () => this.down()}
+    ]);
+    keybinder.setContext('main-nav');
+  }
+
+  up() {
+    let { navitems, dispatch, pushState, query } = this.props;
+    let currentIndex = navitems.findIndex((item) => {
+      return item.name === query.section;
+    });
+    if (currentIndex > 0) {
+      dispatch(pushState(null, '/main/projects', {section: navitems[currentIndex - 1].name}));
+    }
+  }
+
+  down() {
+    let { navitems, dispatch, pushState, query } = this.props;
+    let currentIndex = navitems.findIndex((item) => {
+      return item.name === query.section;
+    });
+    if (currentIndex < navitems.length - 1) {
+      dispatch(pushState(null, '/main/projects', {section: navitems[currentIndex + 1].name}));
+    }
   }
 
   _getClass() {

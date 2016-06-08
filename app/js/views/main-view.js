@@ -17,7 +17,10 @@ class MainView extends Component {
     return(
       <div className='container main-view'>
         <div className='content'>
-          <MainNav navitems={this.props.navitems} query={this.props.query} />
+          <MainNav navitems={this.props.navitems}
+                   query={this.props.query}
+                   dispatch={this.props.dispatch}
+                   pushState={pushState} />
           {this.props.children}
         </div>
       </div>
