@@ -49,7 +49,7 @@ export default class Grid extends Component {
           </div>
         </div>
         <div className='grid-column'>
-          <div className='small-tile active'>
+          <div className='small-tile'>
               <div className='small-tile-inner'>
                 <div className='small-tile-filler'>
                   <div style={{opacity: this.state.opacity}} className='thumb'>
@@ -85,7 +85,7 @@ export default class Grid extends Component {
           </div>
         </div>
         <div className='grid-column'>
-          <div className='small-tile active'>
+          <div className='small-tile'>
               <div className='small-tile-inner'>
                 <div className='small-tile-filler'>
                   <div style={{opacity: this.state.opacity}} className='thumb'>
@@ -121,7 +121,7 @@ export default class Grid extends Component {
           </div>
         </div>
         <div className='grid-column'>
-          <div className='small-tile active'>
+          <div className='small-tile'>
               <div className='small-tile-inner'>
                 <div className='small-tile-filler'>
                   <div style={{opacity: this.state.opacity}} className='thumb'>
