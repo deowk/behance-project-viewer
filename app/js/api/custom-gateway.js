@@ -1,12 +1,16 @@
 import Mappersmith from 'mappersmith/node';
 import request from 'superagent';
+let jsonp = require('superagent-jsonp');
+import getLogger from '../utils/logging';
 
-var HBOGateway = Mappersmith.createGateway({
+var logger = getLogger('app-gateway');
+
+var AppGateway = Mappersmith.createGateway({
 
     get: function () {
         let theRequest = request.get(this.url);
         theRequest = this._handleOpts(theRequest, this);
-        theRequest.end((err, res) => {
+        theRequest.use(jsonp).end((err, res) => {
             return this._handleResponse(err, res, this);
         });
     },
@@ -46,10 +50,10 @@ var HBOGateway = Mappersmith.createGateway({
      * @private
      */
     _handleResponse: function (err, res, req) {
-        let response = "No response";
+        let response = 'No response';
         if (res) {
             response = res.body ? res.body : res.text;
-            if (res.ok) {
+            if (response.http_code === 200) {
                 req.successCallback(response);
                 req.completeCallback();
                 return;
@@ -83,4 +87,4 @@ var HBOGateway = Mappersmith.createGateway({
     }
 });
 
-export default HBOGateway;
+export default AppGateway;

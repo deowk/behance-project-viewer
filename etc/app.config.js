@@ -1,10 +1,10 @@
 var config = {
     deployment: {
-        base_path: ''
+        basePath: ''
     },
     logging: {
         level: 'error',
-        redux_middleware: false
+        reduxMiddleware: false
     }
 };
 

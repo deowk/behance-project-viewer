@@ -7,7 +7,12 @@ import config from '../../../etc/app.config';
 var Manifest = {
     host: config.api.hosts.base,
     resources: {
-        // add youre resources here
+        Fields: {
+          all: {
+            path: '/v2/fields?client_id=' + config.api.clientId,
+            params: {headers: {'Content-Type': 'application/json'}}
+          }
+        }
     }
 };
 

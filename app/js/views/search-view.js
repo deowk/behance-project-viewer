@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { pushState } from 'redux-router';
 import keybinder from '../utils/keybinder';
+import { loadFields } from '../actions/nav-actions';
 
 function select(state) {
   return {
-    dispatch: state.dispatch
+    dispatch: state.dispatch,
+    navitems: state.navReducer.items
   };
 }
 
@@ -31,10 +33,16 @@ class SearchView extends Component {
         {keyCombo: 'enter', fn: () => this.enter()}
     ]);
     keybinder.setContext('search-view');
+    this._getNavItems();
   }
 
   enter() {
     this.props.dispatch(pushState(null, '/main/projects', {section: 'main'}));
+  }
+
+  _getNavItems() {
+    if (this.props.navitems.length > 0) return;
+    this.props.dispatch(loadFields());
   }
 }
 

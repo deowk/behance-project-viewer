@@ -14,7 +14,7 @@ var webpackConfig = {
     output: {
         path: path.resolve(ROOT_PATH, 'dist'),
         filename: 'bundle.js',
-        publicPath: appConfig.deployment.host + appConfig.deployment.base_path + '/'
+        publicPath: appConfig.deployment.host + appConfig.deployment.basePath + '/'
     },
     node: {
         fs: 'empty'
@@ -53,7 +53,7 @@ var webpackConfig = {
     plugins: [
         new HtmlwebpackPlugin({
             hash: true,
-            absolutePath: appConfig.deployment.host + appConfig.deployment.base_path + '/bundle.js',
+            absolutePath: appConfig.deployment.host + appConfig.deployment.basePath + '/bundle.js',
             filename: 'index.html',
             template: path.resolve(ROOT_PATH, 'app/template.html')
         }),

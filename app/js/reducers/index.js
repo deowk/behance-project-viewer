@@ -2,4 +2,4 @@
  All reducers will get exported here
  ----------------------------------------------------------------------------
  */
-export { default as welcomeReducer } from './welcome-reducer';
+export { default as navReducer } from './nav-reducer';
