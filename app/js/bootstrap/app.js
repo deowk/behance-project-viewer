@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { pushState } from 'redux-router';
 import { connect } from 'react-redux';
 import Header from '../components/header.js';
+import '../../assets/img/favicon.ico';
 import '../../assets/sass/main.scss';
 
 function select(state) {
