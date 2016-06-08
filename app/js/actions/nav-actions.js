@@ -2,7 +2,12 @@ import * as constants from '../constants/action-types';
 import Client from '../api/client';
 
 function loadFieldsFromAPI() {
-  return Client.Fields.all();
+  return Client.Fields.all()
+    .then((res) => {
+      let response = {};
+      response.data = res.data.popular;
+      return response;
+    });
 }
 
 export function loadFields() {

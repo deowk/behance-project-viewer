@@ -3,7 +3,7 @@ import CustomGateway from './custom-gateway';
 import Manifest from './manifest';
 import getLogger from '../utils/logging';
 
-var logger = getLogger('hbo-gateway');
+var logger = getLogger('app-gateway');
 
 Mappersmith.Env.USE_PROMISES = true;
 
