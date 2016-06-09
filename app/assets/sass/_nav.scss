@@ -6,7 +6,7 @@
     z-index: 10;
     .nav-item {
         position: relative;
-        $menu-text-font-size: 20px !global;
+        $menu-text-font-size: 100% !global;
         $menu-text-margin-bottom: 5% !global;
         .menu-text {
             background: #fff;

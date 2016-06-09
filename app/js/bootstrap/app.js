@@ -7,7 +7,8 @@ import '../../assets/sass/main.scss';
 
 function select(state) {
     return {
-        routerState: state.router
+        routerState: state.router,
+        search: state.searchReducer.search
     };
 }
 
@@ -24,8 +25,8 @@ export class App extends React.Component {
             <div className="app-container">
               <div className="aspect-ratio-container">
                 <div className="aspect-ratio-filler">
-                  <Header routerState={this.props.routerState} />
-                  {React.cloneElement(children || <div />, {})}
+                  <Header search={this.props.search} routerState={this.props.routerState} />
+                  {React.cloneElement(children || <div />, {search: this.props.search})}
                 </div>
               </div>
             </div>

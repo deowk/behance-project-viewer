@@ -45,6 +45,9 @@
             z-index: 100;
         }
       }
+      div:nth-child(even) {
+        margin-top: 10%;
+      }
   }
 }
 
@@ -52,8 +55,6 @@ $small-tile-width: 435px;
 $small-tile-height: 244px;
 .small-tile {
     width: 100%;
-    margin-bottom: 10%;
-
     .small-tile-inner {
       padding-bottom: aspect-ratio(202, 158);
       position: relative;

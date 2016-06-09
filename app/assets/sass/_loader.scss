@@ -19,17 +19,6 @@ $pulse-duration: 750ms;
   }
 }
 
-html {
-  height: 100%;
-}
-body {
-  @extend html;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #333333;
-}
-
 .loading {
     position: absolute;
     top: 45%;

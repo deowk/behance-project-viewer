@@ -43,7 +43,7 @@ class MainView extends Component {
     } else if (this.props.navitems.length > 0 && typeof this.props.query.section === 'undefined') {
       this.props.dispatch(pushState(null, '/main/projects', {section: this.props.navitems[0].name}));
     } else {
-      this.props.dispatch(loadContent(this.props.query.section));
+      this.props.dispatch(loadContent(this.props.query.section, this.props.search));
     }
   }
 
@@ -53,9 +53,7 @@ class MainView extends Component {
     }
 
     if (this.props.query.section !== nextProps.query.section) {
-      if (!this.props.projects[nextProps.query.section]) {
-        this.props.dispatch(loadContent(nextProps.query.section));
-      }
+      this.props.dispatch(loadContent(nextProps.query.section, this.props.search));
     }
   }
 

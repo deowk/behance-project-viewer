@@ -15,7 +15,7 @@ var Manifest = {
         },
         Projects: {
           byField: {
-            path: '/v2/projects?field={field}&client_id=' + config.api.clientId,
+            path: '/v2/projects?field={field}&q={search}&client_id=' + config.api.clientId,
             params: {headers: {'Content-Type': 'application/json'}}
           }
         }

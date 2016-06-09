@@ -8,10 +8,20 @@ header {
 
 .logo-container {
   height: 100%;
-  width: 2%;
+  width: 4%;
+  display: inline-block;
   .header-logo {
-    width: 100%;
-    margin-top: 40%;
-    margin-left: 40%;
+    width: 50%;
+    margin-top: 20%;
+    margin-left: 20%;
+  }
+}
+
+.breadcrumb-container {
+  display: inline-block;
+  color: #fff;
+  span {
+    display: block;
+    float: left;
   }
 }

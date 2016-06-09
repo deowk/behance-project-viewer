@@ -2,6 +2,8 @@
  * Action Types
  * -----------
  */
+export const SET_SEARCH = 'SET_SEARCH';
+
 export const LOAD_FIELDS = 'LOAD_FIELDS';
 export const LOAD_FIELDS_SUCCESS = 'LOAD_FIELDS_SUCCESS';
 export const LOAD_FIELDS_FAILURE = 'LOAD_FIELDS_FAILURE';
